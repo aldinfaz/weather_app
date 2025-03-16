@@ -1,7 +1,7 @@
 import requests
 import tkinter as tk
 
-api_key = "a2811e34c16e69053249665820876507"
+api_key = "xxx"
 
 def on_button_click():
     city = entry.get()
