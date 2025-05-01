@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Aldin's Weather App</title>
+  <style>
+    body {
+      background-color: lightblue;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    input, button {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: white;
+      cursor: pointer;
+    }
+
+    #weather-result {
+      margin-top: 30px;
+    }
+
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Aldin's Weather App</h1>
+  <form method="POST">
+    <input type="text" name="city" placeholder="Enter your city" required>
+    <button type="submit">Enter</button>
+  </form>
+
+  <div id="weather-result">
+    {% if error %}
+      <p class="error">{{ error }}</p>
+    {% elif weather_info %}
+      <p>The weather in {{ weather_info.city }} is: <strong>{{ weather_info.weather }}</strong></p>
+      <p>The temperature in {{ weather_info.city }} is: <strong>{{ weather_info.temp }}°C</strong></p>
+    {% endif %}
+  </div>
+</body>
+</html>
